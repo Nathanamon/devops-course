@@ -19,6 +19,15 @@ jobs:
 
       - name: Build and test with Maven
         run: mvn clean verify --file backend/simpleapi/pom.xml
+      
+      - name: SonarCloud Analysis
+        run: |
+          mvn -B verify sonar:sonar \
+          -Dsonar.projectKey=Nathanamon_devops-course \
+          -Dsonar.organization=nathanamon \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
+          --file ./backend/simpleapi/pom.xml
   build-and-push-docker-image:
     needs: test-backend # Attends que les tests passent avant de publier
     runs-on: ubuntu-latest
