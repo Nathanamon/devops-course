@@ -36,7 +36,7 @@ jobs:
       - name: Build image and push backend
         uses: docker/build-push-action@v6
         with:
-          context: ./simple-api
+          context: ./backend/simpleapi
           push: true # Indispensable pour que l'image soit envoyée au Hub
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-simple-api:latest
 
