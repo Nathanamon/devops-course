@@ -1,0 +1,10 @@
+- name: Launch proxy
+  community.docker.docker_container:
+    name: my-httpd
+    image: akpablin/tp-devops-httpd
+    ports:
+      - "80:80"
+    networks:
+      - name: my-network
+  vars:
+    ansible_python_interpreter: /opt/docker_venv/bin/python

@@ -1,0 +1,12 @@
+- name: Launch database
+  community.docker.docker_container:
+    name: newpostgres
+    image: akpablin/tp-devops-database
+    networks:
+      - name: my-network
+    env:
+      POSTGRES_USER: "usr"
+      POSTGRES_PASSWORD: "pwd"
+      POSTGRES_DB: "db"
+  vars:
+    ansible_python_interpreter: /opt/docker_venv/bin/python
