@@ -44,7 +44,7 @@ jobs:
       - name: Build image and push frontend
         uses: docker/build-push-action@v6
         with:
-          context: ./devops-front
+          context: ../devops-front
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-front:latest
 
