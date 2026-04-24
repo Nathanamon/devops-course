@@ -4,7 +4,5 @@
     image: akpablin/tp-devops-front:latest
     networks:
       - name: my-network
-    ports:
-      - "80:80"
   vars:
     ansible_python_interpreter: /opt/docker_venv/bin/python
